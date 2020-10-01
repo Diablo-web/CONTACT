@@ -1,4 +1,4 @@
-"""SUMEDH KURHADE A4 458"""
+"""SUMEDH KURHADE"""
 from tkinter import *
 import sqlite3
 import tkinter.ttk as ttk
@@ -7,7 +7,7 @@ import tkinter.messagebox as tkMessageBox
 root = Tk()
 root.title("Contact List")
 width = 750
-height = 400
+height = 450
 screen_width = root.winfo_screenwidth()
 screen_height = root.winfo_screenheight()
 x = (screen_width/2) - (width/2)
@@ -23,8 +23,6 @@ GENDER = StringVar()
 AGE = StringVar()
 ADDRESS = StringVar()
 CONTACT = StringVar()
-
-
 
 #============================METHODS=====================================
 
@@ -82,8 +80,7 @@ def UpdateData():
         AGE.set("")
         ADDRESS.set("")
         CONTACT.set("")
-        
-    
+          
 def OnSelected(event):
     global mem_id, UpdateWindow
     currentItem = tree.focus()
@@ -152,13 +149,10 @@ def OnSelected(event):
     contact = Entry(ContactForm, textvariable=CONTACT,  font=('arial', 14))
     contact.grid(row=5, column=1)
     
-
     #==================BUTTONS==============================
     btn_updatecon = Button(ContactForm, text="Update", width=50, command=UpdateData)
     btn_updatecon.grid(row=6, columnspan=2, pady=10)
-
-
-    
+   
 def DeleteData():
     if not tree.selection():
        result = tkMessageBox.showwarning('', 'Please Select Something First!', icon="warning")
